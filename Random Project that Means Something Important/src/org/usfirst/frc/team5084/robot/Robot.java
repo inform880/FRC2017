@@ -46,6 +46,8 @@ public class Robot extends SampleRobot {
 		SmartDashboard.putData("Auto modes", chooser);
 	    myRobot.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
 	    myRobot.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+	    lEncode.setDistancePerPulse(0.0087266462599);
+        rEncode.setDistancePerPulse(0.0087266462599);
 	}
 
 	@Override
@@ -56,19 +58,17 @@ public class Robot extends SampleRobot {
 		switch (autoSelected) {
 		case customAuto:
 			myRobot.setSafetyEnabled(false);
-			lEncode.setDistancePerPulse(0.0087266462599);
-			rEncode.setDistancePerPulse(0.0087266462599);
 			lDist = lEncode.getDistance();
 			rDist = rEncode.getDistance();
 			if (lEncode.get() > 5)
 				myRobot.drive(0.5, 0.0);
-			else 
+			else
 				myRobot.drive(0.0, 0.0);
 			break;
 		case defaultAuto:
 		default:
 			myRobot.setSafetyEnabled(false);
-			myRobot.drive(0.0, 0.0); 
+			myRobot.drive(0.0, 0.0);
 			break;
 		}
 	}
@@ -83,20 +83,20 @@ public class Robot extends SampleRobot {
 		       if(doorb == false){
 		           if(stick.getRawButton(1)){
 		               doorb = true;
-		               door.set(1);    
+		               door.set(1);
 		           }
 		           else if(doorb == true){
 		               if(stick.getRawButton(1)){
 		               doorb = false;
 		               door.set(0);
-		               }              
+		               }
 		           }
 		         boolean doora = false;
 			     door.set(0);
 			     if(doora == false){
 			         if(stick.getRawButton(2)){
 			             doora = true;
-			             door.set(-1);    
+			             door.set(-1);
 			         }
 			         else if(doora == true){
 			             if(stick.getRawButton(2)){
@@ -109,20 +109,20 @@ public class Robot extends SampleRobot {
 				    if(beltb == false){
 				        if(stick.getRawButton(3)){
 				            beltb = true;
-				            belt.set(1);    
+				            belt.set(1);
 				        }
 				        else if(beltb == true){
 				            if(stick.getRawButton(3)){
 				            beltb = false;
 				            belt.set(0);
-				            }              
+				            }
 				        }
 				      boolean belta = false;
 					  belt.set(0);
 					  if(belta == false){
 					      if(stick.getRawButton(5)){
 					          belta = true;
-					          belt.set(-1);    
+					          belt.set(-1);
 					      }
 					      else if(belta == true){
 					          if(stick.getRawButton(5)){
@@ -135,20 +135,20 @@ public class Robot extends SampleRobot {
 					   if(gearb == false){
 					        if(stick.getRawButton(4)){
 					            gearb = true;
-					            gear.set(.75);    
+					            gear.set(.75);
 					        }
 					        else if(gearb == true){
 					            if(stick.getRawButton(4)){
 					            gearb = false;
 					            gear.set(0);
-					            }              
+					            }
 					        }
 					     boolean geara = false;
 						 gear.set(0);
 						 if(geara == false){
 						      if(stick.getRawButton(6)){
 						          geara = true;
-						          gear.set(-.75);    
+						          gear.set(-.75);
 						      }
 						      else if(geara == true){
 						          if(stick.getRawButton(6)){
@@ -161,20 +161,20 @@ public class Robot extends SampleRobot {
 						   if(shootb == false){
 						           if(stick.getRawButton(8)){
 						               shootb = true;
-						               shoot.set(.75);    
+						               shoot.set(.75);
 						           }
 						           else if(shootb == true){
 						               if(stick.getRawButton(8)){
 						               shootb = false;
 						               shoot.set(0);
-						               }              
+						               }
 						           }
 						         boolean shoota = false;
 							     shoot.set(0);
 							     if(shoota == false){
 							         if(stick.getRawButton(7)){
 							             shoota = true;
-							             shoot.set(-.75);    
+							             shoot.set(-.75);
 							         }
 							         else if(shoota == true){
 							             if(stick.getRawButton(7)){
@@ -193,8 +193,8 @@ public class Robot extends SampleRobot {
 			      }
 		       }
 		}
-		       
-	
+
+
 
 
 	@Override
